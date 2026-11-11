@@ -48,4 +48,3 @@ with sync_playwright() as pw:
  print('PASS desktop hover width',round(initial['width']),round(expanded['width']),round(restored['width']))
  print('PASS video play/pause; both stores, 3 products each; back; direct route; mobile taps')
  browser.close()
-
