@@ -1,14 +1,14 @@
-# Revisión del primer hito
+# Segundo hito · resultados
 
-Playwright con Edge Chromium, escritorio de 1440 × 900 y emulación iPhone 13. Todas las aserciones pasaron.
+Playwright con Edge Chromium a 1440 × 900 y emulación iPhone 13. Ambos archivos de pruebas pasaron. Se comprobó también ausencia de desbordamiento horizontal a 320 px en tienda, categorías, ficha y bolsa.
 
-- «Ver selección» desplaza el catálogo de Umbral y Casa Bies dentro de la tienda. La URL conserva `#/tienda/umbral` o `#/tienda/bies` en escritorio y móvil.
-- La portada y los enlaces de regreso funcionan en ambos tamaños. También se verificó la entrada directa a Umbral.
-- Cada tienda muestra tres piezas. Umbral dispone un retrato amplio con la cremallera superpuesta, título condensado y catálogo compacto. Casa Bies sitúa el vestido a la derecha, el detalle entre foto y texto, título en cursiva y catálogo con mayor espacio.
-- Hover Umbral: imagen principal 252 → 314 px; tras salir, 252 px. El MP4 se reproduce al entrar y se pausa al salir.
+- Cuatro accesos desde portada y regreso desde cada tienda. Cada escaparate contiene tres piezas.
+- Hover en las cuatro columnas: clip en reproducción al entrar y pausado al salir. Umbral se expande de 158 a 204 px y retorna a 158 px.
+- «Ver selección» conserva la ruta en las cuatro tiendas.
+- Categorías reúne doce piezas en total. Abrigos y chaquetas muestra seis piezas de Umbral, Relevo y Plano.
+- Ficha de Relevo muestra imagen, precio, descripción y tres tallas. Añadirla a la bolsa seguido de un vestido de Casa Bies produce una bolsa con dos comercios y total. La bolsa persiste tras recargar y permite quitar un artículo.
+- En móvil se comprobaron cuatro columnas, Relevo y Plano, el filtro Abrigos y chaquetas, ficha y adición a la bolsa.
 
-Capturas nuevas: `08-tienda-umbral-revisada.png`, `09-tienda-casa-bies-revisada.png`, `10-umbral-movil-revisada.png` y `11-casa-bies-movil-revisada.png`. Las capturas de portada y hover se regeneraron con la misma prueba.
+Capturas nuevas `12` a `19` documentan portada, Relevo, Plano, categoría, ficha, bolsa y móvil. Las capturas de Umbral y Casa Bies se conservan de la revisión del primer hito.
 
-Las fotos siguen siendo recortes de la lámina conceptual de fase 1 generada con IA. Los MP4 simulan movimiento sobre imágenes fijas. La prueba móvil emplea emulación Chromium; Safari/iOS y Android físicos siguen pendientes.
-
-Para repetir la prueba, instalar Playwright, servir este directorio en `http://localhost:8000/` y ejecutar `python tests/test_interactions.py`.
+Pendiente: validación en Safari/iOS y Android físicos, fotografía de catálogo real y clips rodados. Los recursos actuales son conceptuales y los vídeos son simulaciones de movimiento. Sin pagos, stock ni reservas.

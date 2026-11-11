@@ -68,7 +68,8 @@ with sync_playwright() as pw:
  assert mobile.url.endswith('#/tienda/bies')
  assert mobile.locator('.collection').bounding_box()['y']<mobile.viewport_size['height']
  mobile.locator('.back-link').tap()
- assert mobile.locator('.store-card').count()==2
+ mobile.wait_for_function("() => document.querySelectorAll('.store-card').length === 4")
+ assert mobile.locator('.store-card').count()==4
  print('PASS desktop hover width',round(initial['width']),round(expanded['width']),round(restored['width']))
  print('PASS video play/pause; both stores, 3 products each; back; direct route; mobile taps')
  browser.close()
