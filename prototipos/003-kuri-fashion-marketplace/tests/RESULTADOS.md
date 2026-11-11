@@ -1,14 +1,14 @@
-# Resultado de la revisión del primer hito
+# Revisión del primer hito
 
-Playwright con Edge Chromium, 1440 × 900 y emulación iPhone 13. Ejecución correcta.
+Playwright con Edge Chromium, escritorio de 1440 × 900 y emulación iPhone 13. Todas las aserciones pasaron.
 
-- Portada de escritorio y móvil capturada tras cargar los cuatro recortes.
-- Hover Umbral: anchura de la imagen principal 252 → 314 px, aumento visible de 62 px. Al retirar el cursor: 252 px.
-- El MP4 comenzó a avanzar en hover y quedó pausado al salir.
-- Umbral y Casa Bies abrieron sus rutas y mostraron tres piezas cada una.
-- El enlace de regreso volvió a la portada. Se comprobó acceso directo a Umbral.
-- Toque móvil abrió cada tienda. Capturas de portada y ambos escaparates.
+- «Ver selección» desplaza el catálogo de Umbral y Casa Bies dentro de la tienda. La URL conserva `#/tienda/umbral` o `#/tienda/bies` en escritorio y móvil.
+- La portada y los enlaces de regreso funcionan en ambos tamaños. También se verificó la entrada directa a Umbral.
+- Cada tienda muestra tres piezas. Umbral dispone un retrato amplio con la cremallera superpuesta, título condensado y catálogo compacto. Casa Bies sitúa el vestido a la derecha, el detalle entre foto y texto, título en cursiva y catálogo con mayor espacio.
+- Hover Umbral: imagen principal 252 → 314 px; tras salir, 252 px. El MP4 se reproduce al entrar y se pausa al salir.
 
-Las fotografías son recortes de una lámina conceptual generada con IA. Los MP4 son simulaciones de movimiento sobre imágenes fijas. Safari/iOS y Android físicos quedan pendientes de verificación.
+Capturas nuevas: `08-tienda-umbral-revisada.png`, `09-tienda-casa-bies-revisada.png`, `10-umbral-movil-revisada.png` y `11-casa-bies-movil-revisada.png`. Las capturas de portada y hover se regeneraron con la misma prueba.
 
-Para repetir las pruebas, instalar Playwright y ejecutar `python tests/test_interactions.py` desde el directorio del prototipo con el servidor local en el puerto 8000.
+Las fotos siguen siendo recortes de la lámina conceptual de fase 1 generada con IA. Los MP4 simulan movimiento sobre imágenes fijas. La prueba móvil emplea emulación Chromium; Safari/iOS y Android físicos siguen pendientes.
+
+Para repetir la prueba, instalar Playwright, servir este directorio en `http://localhost:8000/` y ejecutar `python tests/test_interactions.py`.

@@ -2,3 +2,48 @@
 @media(max-width:700px){.site-header{height:80px;padding:0 22px;grid-template-columns:1fr auto}.brand{font-size:27px}.site-header nav{justify-content:flex-end}.header-note,.edition{display:none}.home{padding:17px 0 35px;min-height:calc(100svh - 145px)}.home-top{padding:0 22px}.home-top p:last-child{display:none}.home h1{text-align:left;margin:39px 22px 46px;font-size:46px;line-height:.98;max-width:340px}.gallery{height:auto;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:22px;gap:18px;padding:0 22px 15px;scrollbar-width:none}.gallery::-webkit-scrollbar{display:none}.store-card{min-width:76vw;max-width:76vw;scroll-snap-align:start}.diptych{height:390px;justify-content:flex-start}.look{width:62%;height:360px}.detail{width:33%;height:294px;margin-top:65px}.store-card.bies .look{margin-top:28px;height:332px}.store-card.bies .detail{margin-top:0;height:292px}.store-card:hover .look,.store-card:focus-visible .look{width:62%}.store-card:hover .detail,.store-card:focus-visible .detail{width:33%}.store-caption{width:100%;margin-top:12px}.store-name{font-size:37px}.store-kind{font-size:9px}.mobile-enter{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:19px;padding-top:13px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}.home-bottom{padding:0 22px;margin-top:45px}.home-bottom p{display:none}.site-footer{margin:0 22px}.site-footer span:nth-child(2){display:none}.store-page{padding:15px 22px 65px}.store-top{font-size:9px}.store-hero{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:35px auto 80px;min-height:0}.hero-image{height:430px;grid-column:1/3;width:72%}.hero-copy{grid-column:1/3;grid-row:2;padding:10px 0 0}.hero-copy h1{font-size:80px;margin:19px 0 26px}.intro{font-size:34px;max-width:320px}.hero-detail{grid-column:2;grid-row:1;width:100%;height:225px;align-self:end;margin:0 0 -15px -10px}.store-page.bies .hero-detail{height:225px;margin:0 0 -15px -10px}.store-page.bies .hero-copy{padding:10px 0 0}.collection-heading{display:block}.collection-heading h2{font-size:42px;margin:9px 0}.products{grid-template-columns:1fr 1fr;gap:18px}.product-image{height:260px}.product-2,.product-3,.store-page.bies .product-2{padding-top:0}.product-3{grid-column:1/3;width:70%;margin-top:20px}.product-meta{font-size:11px;display:block}.product-meta>span{display:block;margin-top:7px}}
 @media(max-width:360px){.home h1{font-size:41px}.diptych{height:340px}.look{height:310px}.detail{height:270px}.store-card.bies .look{height:290px}.store-card.bies .detail{height:260px}.hero-image{height:380px}.hero-copy h1{font-size:68px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.photo video{display:none}}
+
+.collection-link{border:0;padding:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
+.collection-link:focus-visible{outline:2px solid #8f5544;outline-offset:6px}
+.store-page.umbral .store-hero{position:relative;grid-template-columns:minmax(0,1.18fr) minmax(0,.9fr);column-gap:clamp(65px,8vw,135px)}
+.store-page.umbral .hero-image{grid-column:1;grid-row:1;height:660px}
+.store-page.umbral .hero-image img{object-position:52% 42%;filter:contrast(1.12) saturate(.78)}
+.store-page.umbral .hero-copy{grid-column:2;grid-row:1;align-self:center;position:relative;z-index:1}
+.store-page.umbral .hero-copy h1{font-family:"Barlow Condensed",sans-serif;font-size:clamp(92px,11vw,160px);font-weight:600;font-style:normal;letter-spacing:-.055em;text-transform:uppercase;line-height:.78}
+.store-page.umbral .hero-detail{position:absolute;width:24%;height:315px;left:31%;bottom:-64px;margin:0;border:9px solid #eeece6;box-sizing:content-box}
+.store-page.umbral .intro{max-width:360px}
+.store-page.umbral .products{gap:10px}
+.store-page.umbral .product-image{height:420px}
+.store-page.umbral .product-2{padding-top:35px}
+.store-page.umbral .product-3{padding-top:0}
+.store-page.umbral .collection-heading h2{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-weight:500;letter-spacing:-.02em}
+.store-page.bies .store-hero{grid-template-columns:minmax(0,.82fr) minmax(0,.45fr) minmax(0,1.2fr);gap:clamp(24px,3vw,48px)}
+.store-page.bies .hero-copy{grid-column:1;grid-row:1;align-self:center;padding-bottom:0}
+.store-page.bies .hero-copy h1{font-size:clamp(78px,8.5vw,125px);font-style:italic}
+.store-page.bies .hero-detail{grid-column:2;grid-row:1;align-self:end;margin:0 0 45px;height:260px}
+.store-page.bies .hero-image{grid-column:3;grid-row:1;height:650px}
+.store-page.bies .hero-image img{object-position:50% 60%}
+.store-page.bies .products{grid-template-columns:1fr 1fr;gap:clamp(35px,6vw,90px)}
+.store-page.bies .product-image{height:490px}
+.store-page.bies .product-2{padding-top:110px}
+.store-page.bies .product-3{grid-column:1;max-width:70%;padding-top:0}
+.store-page.bies .product-3 .product-image{height:340px}
+.store-page.bies .product-meta{margin-top:19px}
+@media(max-width:700px){
+ .store-page.umbral .store-hero,.store-page.bies .store-hero{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:35px auto 85px}
+ .store-page.umbral .hero-image{grid-column:1/3;grid-row:1;width:80%;height:455px}
+ .store-page.umbral .hero-detail{grid-column:2;grid-row:1;position:relative;left:auto;bottom:auto;width:100%;height:210px;align-self:end;margin:0 0 -20px -15px;border:6px solid #eeece6}
+ .store-page.umbral .hero-copy{grid-column:1/3;grid-row:2;padding:25px 0 0}
+ .store-page.umbral .hero-copy h1{font-size:clamp(78px,23vw,116px);margin:22px 0 30px}
+ .store-page.bies .hero-image{grid-column:1/3;grid-row:1;width:78%;height:455px;justify-self:end}
+ .store-page.bies .hero-detail{grid-column:1;grid-row:1;width:100%;height:205px;align-self:end;margin:0 -14px -18px 0;z-index:1}
+ .store-page.bies .hero-copy{grid-column:1/3;grid-row:2;padding:30px 0 0}
+ .store-page.bies .hero-copy h1{font-size:clamp(70px,20vw,100px);margin:18px 0 27px}
+ .store-page.umbral .products{gap:10px}
+ .store-page.umbral .product-image,.store-page.bies .product-image{height:250px}
+ .store-page.bies .products{gap:18px}
+ .store-page.umbral .product-2,.store-page.bies .product-2{padding-top:0}
+ .store-page.umbral .product-3,.store-page.bies .product-3{grid-column:1/3;width:70%;max-width:none;margin-top:22px}
+ .store-page.bies .product-3 .product-image{height:270px}
+}
+@media(max-width:360px){.store-page.umbral .hero-image,.store-page.bies .hero-image{height:390px}}

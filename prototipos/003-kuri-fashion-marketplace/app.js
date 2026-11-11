@@ -76,7 +76,13 @@ function store(id) {
   document.title = `${s.name} — Kuri Fashion`;
   document.body.dataset.page = id;
   const products = s.products.map((p,i) => `<article class="product product-${i+1}"><div class="product-image"><img src="${assets}${p[3]}" alt="${p[0]}" loading="lazy"></div><div class="product-meta"><div><h3>${p[0]}</h3><p>${p[1]}</p></div><span>${p[2]}</span></div></article>`).join("");
-  app.innerHTML = `<section class="store-page ${id}" aria-labelledby="store-title"><div class="store-top"><a class="back-link" href="#/">← Volver a Kuri Fashion</a><span>${s.number} / Tiendas independientes</span></div><div class="store-hero"><div class="hero-image"><img src="${assets}${id}-look.webp" alt="${s.name}: ${s.kind}" width="367" height="582"></div><div class="hero-copy"><p class="eyebrow">${s.kind}</p><h1 id="store-title" tabindex="-1">${s.name}</h1><p class="intro">${s.intro}</p><div class="hero-rule"></div><p class="store-note">${s.note}</p><a href="#coleccion" class="collection-link">Ver selección <span aria-hidden="true">↓</span></a></div><div class="hero-detail"><img src="${assets}${id}-detail.webp" alt="Detalle de la colección ${s.name}"></div></div><section class="collection" id="coleccion" aria-labelledby="collection-title"><div class="collection-heading"><p>Selección / 01</p><h2 id="collection-title">Piezas de ${s.name}</h2><span>03 piezas</span></div><div class="products">${products}</div></section></section>`;
+  app.innerHTML = `<section class="store-page ${id}" aria-labelledby="store-title"><div class="store-top"><a class="back-link" href="#/">← Volver a Kuri Fashion</a><span>${s.number} / Tiendas independientes</span></div><div class="store-hero"><div class="hero-image"><img src="${assets}${id}-look.webp" alt="${s.name}: ${s.kind}" width="367" height="582"></div><div class="hero-copy"><p class="eyebrow">${s.kind}</p><h1 id="store-title" tabindex="-1">${s.name}</h1><p class="intro">${s.intro}</p><div class="hero-rule"></div><p class="store-note">${s.note}</p><button type="button" class="collection-link">Ver selección <span aria-hidden="true">↓</span></button></div><div class="hero-detail"><img src="${assets}${id}-detail.webp" alt="Detalle de la colección ${s.name}"></div></div><section class="collection" id="coleccion" aria-labelledby="collection-title"><div class="collection-heading"><p>Selección / 01</p><h2 id="collection-title">Piezas de ${s.name}</h2><span>03 piezas</span></div><div class="products">${products}</div></section></section>`;
+  app.querySelector(".collection-link").addEventListener("click", () => {
+    app.querySelector("#coleccion").scrollIntoView({
+      behavior: reduceMotion.matches ? "instant" : "smooth",
+      block: "start"
+    });
+  });
   window.scrollTo(0,0);
   requestAnimationFrame(() => document.getElementById("store-title").focus({preventScroll:true}));
 }

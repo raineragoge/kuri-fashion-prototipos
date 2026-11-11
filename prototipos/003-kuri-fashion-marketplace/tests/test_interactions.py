@@ -25,26 +25,50 @@ with sync_playwright() as pw:
  assert video.evaluate('(v)=>v.paused')
  card.click()
  page.wait_for_timeout(400)
- assert page.locator('#store-title').inner_text()=='Umbral'
+ assert page.locator('#store-title').text_content()=='Umbral'
  assert page.locator('.product').count()==3
- page.screenshot(path=str(out/'03-tienda-umbral.png'),full_page=True)
+ page.screenshot(path=str(out/'08-tienda-umbral-revisada.png'),full_page=True)
+ umbral_url=page.url
+ page.locator('.collection-link').click()
+ page.wait_for_timeout(700)
+ assert page.url==umbral_url
+ assert page.locator('#store-title').text_content()=='Umbral'
+ assert page.locator('.collection').bounding_box()['y']<page.viewport_size['height']
  page.locator('.back-link').click()
  page.locator('.store-card.bies').click()
- assert page.locator('#store-title').inner_text()=='Casa Bies'
+ assert page.locator('#store-title').text_content()=='Casa Bies'
  assert page.locator('.product').count()==3
- page.screenshot(path=str(out/'04-tienda-casa-bies.png'),full_page=True)
+ page.screenshot(path=str(out/'09-tienda-casa-bies-revisada.png'),full_page=True)
+ bies_url=page.url
+ page.locator('.collection-link').click()
+ page.wait_for_timeout(700)
+ assert page.url==bies_url
+ assert page.locator('#store-title').text_content()=='Casa Bies'
+ assert page.locator('.collection').bounding_box()['y']<page.viewport_size['height']
  page.goto('http://localhost:8000/#/tienda/umbral')
- assert page.locator('#store-title').inner_text()=='Umbral'
+ assert page.locator('#store-title').text_content()=='Umbral'
  mobile=browser.new_page(**pw.devices['iPhone 13'])
  mobile.goto('http://localhost:8000/')
  mobile.screenshot(path=str(out/'05-portada-movil.png'),full_page=True)
  mobile.locator('.store-card.umbral').tap()
- assert mobile.locator('#store-title').inner_text()=='Umbral'
- mobile.screenshot(path=str(out/'06-umbral-movil.png'),full_page=True)
+ assert mobile.locator('#store-title').text_content()=='Umbral'
+ mobile.screenshot(path=str(out/'10-umbral-movil-revisada.png'),full_page=True)
+ mobile.locator('.collection-link').tap()
+ mobile.wait_for_timeout(700)
+ assert mobile.locator('#store-title').text_content()=='Umbral'
+ assert mobile.url.endswith('#/tienda/umbral')
+ assert mobile.locator('.collection').bounding_box()['y']<mobile.viewport_size['height']
  mobile.locator('.back-link').tap()
  mobile.locator('.store-card.bies').tap()
- assert mobile.locator('#store-title').inner_text()=='Casa Bies'
- mobile.screenshot(path=str(out/'07-casa-bies-movil.png'),full_page=True)
+ assert mobile.locator('#store-title').text_content()=='Casa Bies'
+ mobile.screenshot(path=str(out/'11-casa-bies-movil-revisada.png'),full_page=True)
+ mobile.locator('.collection-link').tap()
+ mobile.wait_for_timeout(700)
+ assert mobile.locator('#store-title').text_content()=='Casa Bies'
+ assert mobile.url.endswith('#/tienda/bies')
+ assert mobile.locator('.collection').bounding_box()['y']<mobile.viewport_size['height']
+ mobile.locator('.back-link').tap()
+ assert mobile.locator('.store-card').count()==2
  print('PASS desktop hover width',round(initial['width']),round(expanded['width']),round(restored['width']))
  print('PASS video play/pause; both stores, 3 products each; back; direct route; mobile taps')
  browser.close()
