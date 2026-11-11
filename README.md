@@ -6,9 +6,10 @@ Archivo compartido de experimentos de diseño para **Kuri Fashion**. Cada concep
 
 | Nº | Concepto | Estado | Abrir |
 | --- | --- | --- | --- |
-| 001 | **Galería editorial** · columnas que se expanden, fichas, cuadrícula, sonido opcional y versión móvil | Demo interactiva | [Prototipo 001](prototipos/001-galeria-editorial/index.html) |
+| 001 | **Galería editorial** · columnas que se expanden, fichas, cuadrícula, sonido opcional y versión móvil | Demo interactiva conservada | [Prototipo 001](prototipos/001-galeria-editorial/index.html) |
+| 002 | **Galería multitienda** · clips en hover, rutas de cuatro tiendas, selección de prendas y móvil | Demo interactiva verificada | [Prototipo 002](prototipos/002-galeria-multitienda/index.html) |
 
-El prototipo 001 se entrega como un **HTML autocontenido**: las imágenes están integradas y puede abrirse descargando el archivo, sin instalar nada.
+Ambos prototipos son **HTML autocontenidos** que pueden descargarse y abrirse en un navegador sin dependencias ni instalación. En el 002 los microvídeos son movimientos simulados a partir de fotografías, no filmaciones reales.
 
 ## Método de trabajo: Modo Diseño
 
@@ -18,7 +19,7 @@ El prototipo 001 se entrega como un **HTML autocontenido**: las imágenes están
 4. Revisión de escritorio, móvil y accesibilidad básica.
 5. Documentación y conservación de cada iteración.
 
-Para un nuevo experimento se crea una carpeta independiente: `prototipos/002-nombre/`, luego `003-...`. No se sobrescriben versiones anteriores.
+Para un nuevo experimento se crea una carpeta independiente: `prototipos/003-nombre/`, luego `004-...`. No se sobrescriben versiones anteriores.
 
 ## Estado y limitaciones
 
