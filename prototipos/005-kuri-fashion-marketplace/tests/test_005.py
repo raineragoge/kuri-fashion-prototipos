@@ -1,0 +1,68 @@
+"""Ejecutar contra el servidor local del prototipo en el puerto 8005."""
+from pathlib import Path
+from playwright.sync_api import sync_playwright, expect
+
+OUT = Path(__file__).parent
+URL = "http://127.0.0.1:8005/"
+with sync_playwright() as pw:
+    browser = pw.chromium.launch(channel="msedge")
+    page = browser.new_page(viewport={"width": 1440, "height": 900})
+    errors = []
+    page.on("pageerror", lambda error: errors.append(str(error)))
+    page.goto(URL)
+    page.evaluate("document.fonts.ready")
+    strips = page.locator(".gallery-strip")
+    expect(strips).to_have_count(10)
+    expect(page.locator(".home-label h1")).to_be_empty()
+    page.screenshot(path=OUT / "portada.png")
+    strip = strips.nth(2)
+    before = strip.bounding_box()
+    strip.hover()
+    page.wait_for_function("document.querySelector('.active video').currentTime > .25")
+    expect(page.locator(".home-label h1")).to_have_text("Plano")
+    page.wait_for_timeout(420)
+    assert round(strip.bounding_box()["width"]) == 216
+    page.screenshot(path=OUT / "portada-activa.png")
+    page.mouse.move(2, 50)
+    expect(page.locator(".home-label h1")).to_be_empty()
+    assert strip.bounding_box() == before
+    strip.click()
+    expect(page).to_have_url(URL + "#/tienda/plano")
+    page.locator(".back-link").click()
+    button = page.get_by_role("button", name="Firmas")
+    button.click()
+    expect(page.get_by_role("dialog")).to_be_visible()
+    page.wait_for_timeout(400)
+    page.screenshot(path=OUT / "indice.png")
+    page.keyboard.press("Escape")
+    expect(button).to_be_focused()
+    for brand in ["umbral", "bies", "relevo", "plano"]:
+        button.click()
+        page.locator(f".signature.s-{brand}").click()
+        expect(page).to_have_url(URL + "#/tienda/" + brand)
+        expect(page.locator(".spread")).to_be_visible()
+        page.screenshot(path=OUT / f"marca-{brand}.png")
+        page.get_by_role("button", name="Ver selección").click()
+        page.locator(".product-image").first.click()
+        page.locator(".add-to-cart").click()
+        expect(page.locator(".cart-row").last).to_be_visible()
+        page.locator(".brand").click()
+    page.locator(".cart-nav").click()
+    expect(page.locator(".cart-row")).to_have_count(4)
+    mobile = browser.new_page(**pw.devices["iPhone 13"])
+    mobile.goto(URL)
+    expect(mobile.locator(".home-label h1")).to_have_text("Umbral")
+    mobile.screenshot(path=OUT / "movil.png", scale="css")
+    mobile.locator(".gallery-004").evaluate("e=>e.scrollLeft=420")
+    expect(mobile.locator(".gallery-strip.active")).not_to_have_attribute("data-index","0")
+    mobile.locator(".gallery-strip.active").tap()
+    expect(mobile.locator(".spread")).to_be_visible()
+    mobile.screenshot(path=OUT / "marca-movil.png", full_page=True, scale="css")
+    assert mobile.evaluate("document.documentElement.scrollWidth === innerWidth")
+    mobile.locator(".brand").tap()
+    mobile.get_by_role("button",name="Firmas").tap()
+    mobile.locator(".index-categories").tap()
+    expect(mobile.locator(".category-filters")).to_be_visible()
+    assert not errors, errors
+    print("PASS: geometría, vídeo, índice, Escape, cuatro marcas, catálogo, bolsa y móvil")
+    browser.close()
