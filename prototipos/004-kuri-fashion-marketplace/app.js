@@ -246,4 +246,3 @@ function route() {
 }
 addEventListener("hashchange", route);
 route();
-
