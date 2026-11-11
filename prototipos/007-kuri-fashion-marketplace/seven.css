@@ -1,0 +1,283 @@
+/* 007 keeps the 006 first viewport, then opens into an editorial marketplace. */
+body[data-page=home] { background: #efede6; }
+.gallery-007.is-scrollable { overflow-x: auto; overflow-y: hidden; scrollbar-width: none; }
+.gallery-007.is-scrollable::-webkit-scrollbar { display: none; }
+.gallery-strip-007 .strip-hover { opacity: 0; filter: none; }
+.gallery-strip-007.active .strip-hover { opacity: 1; }
+.gallery-strip-007.playing .strip-hover { opacity: 0; }
+.gallery-strip-007.playing video { opacity: 1; }
+.gallery-more { position: absolute; right: 30px; bottom: 26px; background: transparent; border: 0; font: 11px "Instrument Sans",sans-serif; letter-spacing: .1em; cursor: pointer; }
+.feature-stage-007 { --feature-step: 157.14px; --feature-width: 142px; }
+.feature-slice-007 { left: calc(var(--slot) * var(--feature-step)); width: var(--feature-width); }
+.feature-slice-007.active { width: calc(var(--feature-width) + 65px); }
+.feature-slice-007 .feature-poster { left: calc(var(--slot) * var(--feature-step) * -1); background-image: var(--fragment-poster); }
+.feature-slice-007 .fragment-hover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .32s; }
+.feature-slice-007.active .fragment-hover { opacity: 1; }
+.feature-slice-007.playing .fragment-hover { opacity: 0; }
+.feature-wordmark { left: calc(var(--gap) * var(--feature-step)); width: var(--feature-width); }
+.feature-wordmark-vertice strong { font: italic 650 67px/.88 "Barlow Condensed",sans-serif; text-transform: uppercase; letter-spacing: -.055em; }
+.feature-wordmark-oficio strong { font: 61px/.9 Georgia,serif; text-transform: none; letter-spacing: -.065em; }
+.feature-wordmark-trenza strong { font: italic 65px/.9 "Instrument Serif",serif; text-transform: none; }
+.feature-wordmark-orilla strong { font: 64px/.9 "Instrument Serif",serif; text-transform: none; letter-spacing: -.06em; }
+.feature-wordmark-sutura strong { font: 600 65px/.85 "Barlow Condensed",sans-serif; letter-spacing: -.06em; }
+.feature-wordmark-aro strong { font: 500 90px/.9 "Instrument Serif",serif; text-transform: none; }
+#brand-index { overflow-y: auto; }
+#brand-links { grid-template-columns: repeat(5,1fr); }
+.signature span { font-size: clamp(22px,2.6vw,38px); }
+.s-vertice span,.s-sutura span { font: 600 clamp(24px,2.5vw,35px) "Barlow Condensed",sans-serif; text-transform: uppercase; }
+.s-oficio span { font: clamp(24px,2.5vw,35px) Georgia,serif; }
+.s-trenza span,.s-orilla span { font: italic clamp(24px,2.5vw,35px) "Instrument Serif",serif; }
+.s-aro span { font: 500 clamp(27px,3vw,44px) "Instrument Serif",serif; }
+
+.home-editorial { background: #efede6; overflow: hidden; }
+.home-campaign { min-height: min(76vw,810px); position: relative; overflow: hidden; color: #f5f1e8; }
+.home-campaign img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.68); }
+.home-campaign>div { position: relative; min-height: inherit; padding: clamp(30px,5vw,90px); display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; }
+.home-campaign span,.home-campaign a { font-size: 11px; text-transform: uppercase; letter-spacing: .16em; }
+.home-campaign h2 { font: 400 clamp(70px,13vw,190px)/.8 "Instrument Serif",serif; letter-spacing: -.065em; max-width: 8ch; margin: 22px 0 36px; }
+.home-campaign a { border-bottom: 1px solid currentColor; padding-bottom: 9px; }
+.home-firms,.home-discovery { max-width: 1360px; margin: auto; padding: clamp(95px,12vw,180px) clamp(22px,5vw,80px); }
+.home-section-heading { display: grid; grid-template-columns: .3fr 1fr; align-items: baseline; gap: 4vw; border-top: 1px solid #9e9a90; padding-top: 20px; }
+.home-section-heading span { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.home-section-heading h2 { font: 400 clamp(42px,6vw,88px)/.94 "Instrument Serif",serif; letter-spacing: -.04em; margin: 0 0 80px; max-width: 11ch; }
+.firm-pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(25px,9vw,140px); align-items: start; }
+.firm-portrait { display: block; position: relative; min-width: 0; }
+.firm-portrait:nth-child(2) { margin-top: 135px; }
+.firm-portrait img { width: 100%; height: min(55vw,670px); object-fit: cover; }
+.firm-portrait:first-child img { object-position: center 24%; }
+.firm-portrait span { display: grid; grid-template-columns: 1fr auto; border-top: 1px solid #a5a095; margin-top: 16px; padding-top: 12px; }
+.firm-portrait small { grid-column: 1/-1; text-transform: uppercase; font-size: 10px; letter-spacing: .14em; }
+.firm-portrait strong { font: italic clamp(42px,5vw,75px) "Instrument Serif",serif; font-weight: 400; }
+.firm-portrait-oficio strong { font: clamp(42px,5vw,75px) Georgia,serif; }
+.firm-portrait b { font: 400 30px Georgia,serif; align-self: center; }
+.home-discovery { padding-top: 50px; }
+.discovery-products { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: clamp(12px,2vw,30px); }
+.discovery-item { display: block; padding-top: calc(var(--i) * 38px); }
+.discovery-item img { height: clamp(270px,32vw,440px); object-fit: cover; }
+.discovery-item span { display: block; border-top: 1px solid #b9b3a8; margin-top: 12px; padding-top: 11px; font-size: 12px; }
+.browse-all { display: inline-block; margin-top: 65px; border-bottom: 1px solid; padding-bottom: 8px; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
+
+.store-007 .brand-imprint { display: block; font: 11px "Instrument Sans",sans-serif; text-transform: uppercase; letter-spacing: .17em; margin-bottom: 13px; }
+.store-007 .spread { position: relative; }
+.store-007 .brand-mark { position: absolute; right: 24px; top: 20px; width: 47px; height: 47px; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; font: 24px/.8 "Instrument Serif",serif; letter-spacing: -.09em; opacity: .75; }
+.store-007.umbral .brand-mark,.store-007.vertice .brand-mark,.store-007.sutura .brand-mark { border-radius: 0; font: 600 26px "Barlow Condensed",sans-serif; transform: rotate(-7deg); }
+.store-007.bies .brand-mark,.store-007.trenza .brand-mark,.store-007.orilla .brand-mark { font-style: italic; border-radius: 50% 20%; }
+.store-007.relevo .brand-mark { border-style: dashed; transform: rotate(11deg); }
+.store-007.plano .brand-mark { border-radius: 0; font: 500 21px "Instrument Sans",sans-serif; }
+.store-007.oficio .brand-mark { border-radius: 0; font: 22px Georgia,serif; }
+.store-007.aro .brand-mark { border-width: 2px; font-size: 29px; }
+.brand-intro .campaign { object-fit: cover; }
+.brand-narrative { max-width: 1220px; margin: 0 auto 110px; }
+.brand-panorama { height: min(61vw,720px); min-height: 400px; position: relative; color: white; overflow: hidden; }
+.brand-panorama img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.84); }
+.brand-panorama>div { position: absolute; left: clamp(20px,4vw,60px); right: 20px; bottom: 30px; display: flex; justify-content: space-between; align-items: baseline; gap: 20px; text-shadow: 0 1px 8px #0008; }
+.brand-panorama span { text-transform: uppercase; letter-spacing: .14em; font-size: 11px; }
+.brand-panorama strong { font: italic clamp(38px,5vw,75px) "Instrument Serif",serif; font-weight: 400; }
+.brand-statement { display: grid; grid-template-columns: .28fr 1fr .45fr; gap: 30px; align-items: start; border-bottom: 1px solid var(--line); padding: clamp(50px,7vw,100px) 0; }
+.brand-statement small { font-size: 11px; text-transform: uppercase; letter-spacing: .13em; }
+.brand-statement p { font: 400 clamp(28px,3.4vw,50px)/1.13 "Instrument Serif",serif; margin: 0; max-width: 20ch; }
+.brand-statement span { font-size: 12px; line-height: 1.6; max-width: 25ch; }
+.brand-sequence { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: clamp(8px,1.5vw,22px); padding: 55px 0; align-items: start; }
+.sequence-frame { margin: 0; min-width: 0; grid-column: span 4; }
+.sequence-frame img { width: 100%; height: clamp(310px,38vw,520px); object-fit: cover; }
+.sequence-frame figcaption { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; border-top: 1px solid var(--line); margin-top: 12px; padding-top: 8px; }
+.sequence-frame-2,.sequence-frame-5 { margin-top: 100px; }
+.sequence-frame-3,.sequence-frame-6 { margin-top: 45px; }
+.brand-outro { display: flex; justify-content: space-between; gap: 30px; border-top: 1px solid var(--line); padding: 25px 0; }
+.brand-outro span { font-size: 10px; text-transform: uppercase; letter-spacing: .14em; }
+.brand-outro p { font: italic 25px "Instrument Serif",serif; max-width: 38ch; margin: 0; }
+.store-007 .collection { padding-top: 30px; }
+.store-007 .product-image img { object-fit: cover; }
+
+/* Ten different visual grammars share only the commercial shell. */
+.store-007.umbral .brand-panorama { filter: contrast(1.1); }
+.store-007.umbral .brand-statement p { font: 600 clamp(35px,4.5vw,65px)/.92 "Barlow Condensed",sans-serif; text-transform: uppercase; }
+.store-007.umbral .brand-sequence { background: #242422; padding: 25px; color: #f3efe6; gap: 9px; }
+.store-007.umbral .sequence-frame-1 { grid-column: span 5; }
+.store-007.umbral .sequence-frame-2 { grid-column: span 3; margin-top: 125px; }
+.store-007.umbral .sequence-frame-3 { grid-column: span 4; margin-top: 30px; }
+.store-007.bies .brand-panorama { width: 78%; margin-left: auto; }
+.store-007.bies .brand-statement p { font-style: italic; color: #7c565b; }
+.store-007.bies .brand-sequence { gap: 2.5vw; }
+.store-007.bies .sequence-frame-1,.store-007.bies .sequence-frame-4 { grid-column: span 5; }
+.store-007.bies .sequence-frame-2,.store-007.bies .sequence-frame-5 { grid-column: span 3; }
+.store-007.bies .sequence-frame-3,.store-007.bies .sequence-frame-6 { grid-column: span 4; }
+.store-007.relevo .brand-panorama { border: 17px solid #f8f4ea; transform: rotate(-.6deg); }
+.store-007.relevo .brand-statement small,.store-007.relevo .brand-statement span,.store-007.relevo figcaption { font-family: "Courier New",monospace; }
+.store-007.relevo .sequence-frame:nth-child(odd) { background: #f8f3e7; padding: 8px 8px 17px; transform: rotate(-1.5deg); }
+.store-007.relevo .sequence-frame:nth-child(even) { transform: rotate(1.5deg); }
+.store-007.plano .brand-panorama { clip-path: polygon(0 0,100% 0,100% 90%,89% 90%,89% 100%,0 100%); }
+.store-007.plano .brand-statement { border: 1px solid var(--line); padding: 35px; }
+.store-007.plano .brand-statement p,.store-007.plano .brand-outro p { font-family: "Instrument Sans",sans-serif; font-style: normal; letter-spacing: -.05em; }
+.store-007.plano .brand-sequence { gap: 0; border-left: 1px solid var(--line); border-top: 1px solid var(--line); }
+.store-007.plano .sequence-frame { padding: 10px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 0; }
+
+.store-007.vertice { background: #e7e9e8; }
+.spread-vertice { grid-template-columns: 1.1fr .48fr 1fr; grid-template-areas: "photo detail name" "photo detail copy"; gap: 16px; padding: 25px; background: #12318a; color: #f0eee8; }
+.spread-vertice .campaign { height: 600px; }
+.spread-vertice .sample { align-self: end; }
+.spread-vertice .sample img { height: 230px; }
+.spread-vertice .imprint { align-self: end; }
+.spread-vertice h1 { font: italic 600 clamp(72px,7.5vw,122px)/.82 "Barlow Condensed",sans-serif; text-transform: uppercase; letter-spacing: -.06em; transform: skew(-5deg); }
+.spread-vertice h2 { color: #ff6652; }
+.spread-vertice .editorial { align-self: start; }
+.store-007.vertice .brand-statement p { font: italic 600 clamp(35px,4.5vw,64px)/.9 "Barlow Condensed",sans-serif; text-transform: uppercase; color: #234bb1; }
+.store-007.vertice .brand-sequence { border-top: 10px solid #e95a47; }
+.store-007.vertice .sequence-frame-2,.store-007.vertice .sequence-frame-5 { margin-top: 35px; }
+.store-007.vertice .product-image { background: #d4dce9; }
+
+.store-007.oficio { background: #eee9df; }
+.spread-oficio { grid-template-columns: .6fr 1.1fr .85fr; grid-template-areas: "detail photo name" "detail photo copy"; gap: 3vw; border-top: 1px solid #817d76; border-bottom: 1px solid #817d76; padding: 27px; }
+.spread-oficio .campaign { height: 610px; }
+.spread-oficio .sample { align-self: end; }
+.spread-oficio .sample img { height: 265px; }
+.spread-oficio .imprint { align-self: end; }
+.spread-oficio h1 { font: clamp(70px,7vw,115px)/.92 Georgia,serif; letter-spacing: -.075em; }
+.spread-oficio h2 { font: italic 25px "Instrument Serif",serif; }
+.spread-oficio .editorial { border-top: 1px solid; padding-top: 16px; }
+.store-007.oficio .brand-statement p { font-family: Georgia,serif; letter-spacing: -.045em; }
+.store-007.oficio .brand-sequence { grid-template-columns: repeat(12,1fr); }
+.store-007.oficio .sequence-frame-1,.store-007.oficio .sequence-frame-4 { grid-column: span 3; }
+.store-007.oficio .sequence-frame-2,.store-007.oficio .sequence-frame-5 { grid-column: span 4; margin-top: 55px; }
+.store-007.oficio .sequence-frame-3,.store-007.oficio .sequence-frame-6 { grid-column: span 5; margin-top: 0; }
+.store-007.oficio .collection-heading h2 { font-family: Georgia,serif; }
+
+.store-007.trenza { background: #f2eee5; color: #5a392b; }
+.spread-trenza { grid-template-columns: .9fr 1.25fr .55fr; grid-template-areas: "name photo detail" "copy photo detail"; gap: 2.5vw; padding: 30px; background: #e6d8c7; }
+.spread-trenza .imprint { align-self: end; }
+.spread-trenza h1 { font: italic clamp(70px,8vw,125px)/.9 "Instrument Serif",serif; }
+.spread-trenza .campaign { height: 615px; }
+.spread-trenza .sample { align-self: end; transform: rotate(3deg); }
+.spread-trenza .sample img { height: 260px; }
+.spread-trenza .editorial { align-self: start; }
+.store-007.trenza .brand-statement p { font-style: italic; }
+.store-007.trenza .sequence-frame { border-radius: 50% 50% 0 0 / 6% 6% 0 0; overflow: hidden; }
+.store-007.trenza .sequence-frame-2,.store-007.trenza .sequence-frame-5 { margin-top: 60px; }
+
+.store-007.orilla { background: #f6f2e9; color: #514b42; }
+.spread-orilla { grid-template-columns: .8fr .45fr 1.15fr; grid-template-areas: "name detail photo" "copy detail photo"; gap: 3vw; padding: 20px 0; }
+.spread-orilla .imprint { align-self: end; }
+.spread-orilla h1 { font: clamp(76px,8vw,128px)/.88 "Instrument Serif",serif; letter-spacing: -.075em; }
+.spread-orilla h2 { font: italic 28px "Instrument Serif",serif; }
+.spread-orilla .campaign { height: 620px; }
+.spread-orilla .sample { align-self: end; padding-bottom: 45px; }
+.spread-orilla .sample img { height: 210px; }
+.spread-orilla .editorial { align-self: start; }
+.store-007.orilla .brand-panorama { width: 90%; margin-left: auto; }
+.store-007.orilla .brand-statement { padding-block: 120px; }
+.store-007.orilla .brand-sequence { gap: 3vw; }
+.store-007.orilla .sequence-frame-1,.store-007.orilla .sequence-frame-4 { grid-column: span 5; }
+.store-007.orilla .sequence-frame-2,.store-007.orilla .sequence-frame-5 { grid-column: span 3; margin-top: 145px; }
+.store-007.orilla .sequence-frame-3,.store-007.orilla .sequence-frame-6 { grid-column: span 4; margin-top: 70px; }
+
+.store-007.sutura { background: #efefeb; color: #282826; }
+.spread-sutura { grid-template-columns: 1.05fr .75fr .55fr; grid-template-areas: "photo name detail" "photo copy detail"; gap: 12px; padding: 18px; border: 1px solid #a9a9a4; }
+.spread-sutura .campaign { height: 610px; }
+.spread-sutura .imprint { align-self: center; }
+.spread-sutura h1 { font: 600 clamp(78px,9vw,145px)/.77 "Barlow Condensed",sans-serif; text-transform: uppercase; letter-spacing: -.06em; }
+.spread-sutura h2 { font: 20px "Instrument Sans",sans-serif; }
+.spread-sutura .sample { align-self: end; border-left: 5px solid #a9403a; padding-left: 10px; }
+.spread-sutura .sample img { height: 290px; }
+.spread-sutura .editorial { align-self: start; border-top: 2px solid #a9403a; padding-top: 15px; }
+.store-007.sutura .brand-statement p { font: 600 clamp(35px,4vw,60px)/.92 "Barlow Condensed",sans-serif; text-transform: uppercase; }
+.store-007.sutura .brand-sequence { gap: 5px; }
+.store-007.sutura .sequence-frame-2,.store-007.sutura .sequence-frame-5 { margin-top: 0; }
+.store-007.sutura .sequence-frame-3,.store-007.sutura .sequence-frame-6 { margin-top: 90px; }
+.store-007.sutura .sequence-frame:nth-child(even) { border-top: 5px solid #a9403a; }
+.store-007.sutura .collection-heading h2 { font-family: "Barlow Condensed",sans-serif; text-transform: uppercase; }
+
+.store-007.aro { background: #e9e5de; color: #262423; }
+.spread-aro { grid-template-columns: .9fr 1.1fr .6fr; grid-template-areas: "name photo detail" "copy photo detail"; gap: 2.5vw; padding: 35px; background: #252422; color: #f2efe7; }
+.spread-aro .imprint { align-self: end; }
+.spread-aro h1 { font: 400 clamp(100px,12vw,180px)/.8 "Instrument Serif",serif; }
+.spread-aro h2 { font: italic 28px "Instrument Serif",serif; }
+.spread-aro .campaign { height: 610px; object-position: 50% 15%; }
+.spread-aro .sample { align-self: center; }
+.spread-aro .sample img { height: 230px; border-radius: 50% 50% 0 0; }
+.spread-aro .editorial { align-self: start; }
+.store-007.aro .brand-statement p { font: italic clamp(33px,4vw,62px)/1 "Instrument Serif",serif; }
+.store-007.aro .brand-sequence { grid-template-columns: repeat(12,1fr); }
+.store-007.aro .sequence-frame-1,.store-007.aro .sequence-frame-4 { grid-column: span 3; }
+.store-007.aro .sequence-frame-2,.store-007.aro .sequence-frame-5 { grid-column: span 5; margin-top: 35px; }
+.store-007.aro .sequence-frame-3,.store-007.aro .sequence-frame-6 { grid-column: span 4; margin-top: 100px; }
+.store-007.aro .product-image { background: #33302d; }
+
+/* Motion follows content and the temperament of the firm. */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .75s ease, transform .8s cubic-bezier(.2,.75,.2,1), clip-path .8s cubic-bezier(.2,.75,.2,1); }
+.reveal[data-motion=slide] { transform: translateX(-35px); }
+.reveal[data-motion=mask] { transform: none; }
+.reveal[data-motion=mask] img { clip-path: inset(0 0 100%); transition: clip-path .8s cubic-bezier(.2,.75,.2,1); }
+.reveal[data-motion=scale] { transform: scale(.965); }
+.reveal[data-motion=wide] { clip-path: inset(0 5%); transform: none; }
+.reveal.in-view { opacity: 1; transform: none; clip-path: inset(0); }
+.reveal[data-motion=mask].in-view img { clip-path: inset(0); }
+.brand-intro .campaign,.brand-intro .imprint,.brand-intro .sample,.brand-intro .editorial { animation: brand-enter .7s cubic-bezier(.2,.7,.2,1) both; }
+.brand-intro .imprint { animation-delay: .08s; }
+.brand-intro .sample { animation-delay: .15s; }
+.brand-intro .editorial { animation-delay: .23s; }
+@keyframes brand-enter { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; } }
+body[data-identity=underground] .brand-intro .campaign { animation-name: enter-side; }
+body[data-identity=archive] .brand-intro .campaign,body[data-identity=archive] .brand-intro .sample { animation-name: enter-archive; }
+body[data-identity=grid] .brand-intro .campaign,body[data-identity=construct] .brand-intro .campaign { animation-name: enter-mask; }
+body[data-identity=atelier] .brand-intro .campaign,body[data-identity=coast] .brand-intro .campaign { animation-name: enter-soft; animation-duration: 1s; }
+body[data-identity=court] .brand-intro .campaign { animation-name: enter-side; animation-duration: .52s; }
+body[data-identity=loom] .brand-intro .campaign { animation-name: enter-soft; }
+body[data-identity=tailor] .brand-intro .campaign { animation-name: enter-mask; }
+body[data-identity=jewel] .brand-intro .campaign { animation-name: enter-soft; animation-duration: 1.1s; }
+@keyframes enter-side { from { opacity: 0; transform: translateX(-55px); } to { opacity: 1; transform: none; } }
+@keyframes enter-archive { from { opacity: 0; transform: translate(20px,25px) rotate(2deg); } to { opacity: 1; } }
+@keyframes enter-mask { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0); } }
+@keyframes enter-soft { from { opacity: 0; filter: blur(8px); transform: scale(1.025); } to { opacity: 1; filter: none; transform: none; } }
+
+@media(max-width:700px) {
+  #brand-links { grid-template-columns: repeat(2,1fr); }
+  .gallery-007.is-scrollable { overflow-x: auto; }
+  .feature-view { width: calc(var(--feature-slots) * 96px + 48px); }
+  .feature-stage { width: calc(var(--feature-slots) * 96px); }
+  .feature-slice-007 { left: calc(var(--slot) * 96px); width: 87px; }
+  .feature-slice-007.active { width: 130px; }
+  .feature-slice-007 .feature-poster { left: calc(var(--slot) * -96px); width: calc(var(--feature-slots) * 96px); background-size: calc(var(--feature-slots) * 96px) 410px; }
+  .feature-wordmark { left: calc(var(--gap) * 96px); width: 87px; }
+  .feature-wordmark strong { font-size: 43px; }
+  .home-campaign { min-height: 640px; }
+  .home-campaign h2 { font-size: 72px; }
+  .home-firms,.home-discovery { padding: 90px 22px; }
+  .home-section-heading { display: block; }
+  .home-section-heading h2 { font-size: 51px; margin: 25px 0 55px; }
+  .firm-pair { gap: 15px; }
+  .firm-portrait:nth-child(2) { margin-top: 100px; }
+  .firm-portrait img { height: 330px; }
+  .firm-portrait strong { font-size: 34px; }
+  .firm-portrait small { font-size: 8px; }
+  .discovery-products { grid-template-columns: 1fr 1fr; row-gap: 20px; }
+  .discovery-item { padding-top: 0; }
+  .discovery-item:nth-child(even) { padding-top: 35px; }
+  .discovery-item img { height: 275px; }
+  .discovery-item span { font-size: 10px; }
+  .store-007 .spread { grid-template-columns: 1fr 1fr; gap: 13px; padding: 16px; margin-bottom: 55px; }
+  .store-007 .spread .imprint { grid-area: 1/1/2/3; }
+  .store-007 .spread .campaign { grid-area: 2/1/3/3; width: 85%; height: 410px; }
+  .store-007 .spread .sample { grid-area: 2/2/3/3; align-self: end; z-index: 1; margin-bottom: -20px; }
+  .store-007 .spread .sample img { height: 180px; }
+  .store-007 .spread .editorial { grid-area: 3/1/4/3; }
+  .store-007 .spread h1 { font-size: clamp(65px,20vw,100px); }
+  .store-007.aro .spread h1 { font-size: 115px; }
+  .store-007 .brand-narrative { margin-bottom: 65px; }
+  .brand-panorama { min-height: 0; height: 350px; }
+  .brand-panorama>div { display: block; bottom: 20px; }
+  .brand-panorama strong { display: block; font-size: 41px; }
+  .brand-statement { grid-template-columns: 1fr; gap: 20px; padding: 55px 0; }
+  .brand-statement p { font-size: 35px; }
+  .brand-sequence { grid-template-columns: 1fr 1fr !important; gap: 12px !important; padding: 30px 0; }
+  .brand-sequence .sequence-frame { grid-column: auto !important; margin: 0 !important; padding: 0; }
+  .brand-sequence .sequence-frame:nth-child(even) { margin-top: 45px !important; }
+  .brand-sequence .sequence-frame img { height: 265px; }
+  .brand-outro { display: block; }
+  .brand-outro p { margin-top: 18px; font-size: 23px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .reveal { opacity: 1; transform: none; clip-path: none; transition: none; }
+  .reveal[data-motion=mask] img { clip-path: none; transition: none; }
+  .brand-intro .campaign,.brand-intro .imprint,.brand-intro .sample,.brand-intro .editorial { animation: none; }
+  .fragment-hover { transition: none; }
+}
