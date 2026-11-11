@@ -1,32 +1,38 @@
-# 002 — Kuri Fashion: galería multitienda
+# 002 · Escaparates inmersivos / Kuri Fashion
 
-**Estado:** prototipo interactivo verificable (sin backend). 11 de noviembre de 2026.
+**Estado:** prototipo interactivo de demostración, rediseñado el 11 de noviembre de 2026.  
+**Referencia:** [Alan Menken](https://www.alanmenken.com/) (columnas que se expanden y reproducen vídeo al pasar el cursor), reinterpretada para una plataforma que reúne varias tiendas.
 
-Inspirado en la navegación por columnas de [alanmenken.com](https://www.alanmenken.com/), con una adaptación propia para la plataforma de varias tiendas Kuri Fashion.
+## Qué cambia frente a la versión 001
 
-## Cómo probarlo
+La 001 era una galería de 12 imágenes en un fondo claro. La 002 tiene **cuatro escaparates grandes**, un tratamiento editorial con alto contraste, una presentación mucho más clara de los cuatro comercios y un universo propio para cada tienda. No es una simple variación de los textos de la 001.
 
-Abre [`index.html`](index.html) en tu navegador. El documento es autocontenido: incluye el CSS, JavaScript, fotografías y **12 microvídeos de demostración**. No necesita instalación ni servidor.
+### Interacciones
 
-1. Pasa el cursor sobre una columna: se expande y empieza un clip en bucle.
-2. Retira el cursor: vuelve a su tamaño original y el clip se pausa y reinicia.
-3. Haz clic sobre una columna: se abre el perfil de la tienda correspondiente.
-4. Entra en su selección: aparecerán tres imágenes editoriales de ejemplo.
-5. Regresa a las tiendas o cambia a la vista de cuadrícula.
-6. Prueba el menú y la experiencia en móvil; las rutas `#tienda/nomada`, `#tienda/trama`, `#tienda/relevo` y `#tienda/umbral` pueden abrirse directamente.
+- **Escritorio:** al pasar el cursor sobre un escaparate, la columna se expande, aumenta el protagonismo de la imagen y comienza un clip corto; al salir, el clip se pausa y el escaparate recupera su tamaño.
+- **Clic:** abre la página de la tienda en la misma experiencia, con cabecera propia y tres productos conceptuales.
+- **Móvil:** escaparates desplazables horizontalmente, sin depender del hover. Cada tarjeta abre su tienda.
+- **Directorio:** cuatro tiendas con accesos independientes.
+- **Menú:** navegación a portada, directorio y manifiesto.
+- **Rutas:** `#tienda/nomada`, `#tienda/trama`, `#tienda/relevo` y `#tienda/umbral`.
 
-## Alcance y honestidad sobre el material
+## Cómo abrir
 
-- **Las cuatro tiendas son ficticias**: Nómada, Trama, Relevo y Umbral.
-- Los clips se han creado con un efecto de cámara suave a partir de fotografías generadas. No son grabaciones reales de productos o tiendas. Se sustituyen por vídeos autorizados de cada comercio cuando estén disponibles.
-- Las imágenes ilustran una dirección artística: todavía no son un catálogo, no hay precios, stock, pagos, reservas ni logística.
-- El clic **no lleva a otro repositorio de GitHub**, sino a la sección o perfil de una tienda dentro de la plataforma, que es el modelo comercial previsto.
-- En móvil el hover se sustituye por selección táctil; la reproducción automática no es esencial para navegar.
+Descarga `index.html` y ábrelo en Chrome o Chromium. Es un **HTML autocontenido**, con imágenes y clips incluidos. No necesita npm ni un servidor. Si se incrusta en una página, debe permitirse la reproducción de vídeos silenciados.
 
-## Verificación
+## Qué hemos probado
 
-Pruebas automatizadas locales con Playwright sobre Chromium a 1440×900 y 390×844: 12 columnas, 4 tarjetas de tiendas, inicio y pausa del vídeo en hover, navegación, regreso, cuadrícula y acceso directo por hash. Sin errores JavaScript detectados en esas pruebas. No equivale a una auditoría completa de accesibilidad o rendimiento.
+Verificación local con Playwright + Chromium en resoluciones **1440 × 900** y **390 × 844**:
 
-## Evolución
+- Cuatro escaparates, cuatro entradas del directorio y tres productos en la tienda probada.
+- Reproducción al hacer hover y pausa al salir (escritorio).
+- Apertura de Trama, regreso a la portada y funcionamiento del menú.
+- Sin desbordamiento horizontal de la página ni errores JavaScript detectados.
 
-El prototipo 001 queda intacto. Si seguimos evolucionando este concepto sin cambiar su esencia, registraremos los cambios mediante commits; para un diseño alternativo abriremos `003-...`.
+Las pruebas no sustituyen una auditoría completa de accesibilidad, rendimiento ni compatibilidad con todos los dispositivos.
+
+## Contenido demostrativo
+
+Las cuatro tiendas son **ficticias** y los productos no están a la venta. Los clips son *movimientos de cámara generados a partir de fotografías*: **no son grabaciones reales de tiendas**. Cuando tengamos contenido comercial autorizado, se deberán reemplazar. No se copió material de la web de Alan Menken.
+
+**Conservación:** el prototipo 001 sigue disponible sin cambios en su propia carpeta.
