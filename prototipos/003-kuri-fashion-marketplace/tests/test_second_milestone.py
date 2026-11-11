@@ -82,5 +82,3 @@ with sync_playwright() as pw:
     assert not errors, errors
     print("PASS four stores, hover videos, categories, product pages, shared persistent cart and mobile")
     browser.close()
-
-
