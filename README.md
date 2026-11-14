@@ -8,8 +8,9 @@ Archivo compartido de experimentos de diseño para **Kuri Fashion**. Cada concep
 | --- | --- | --- | --- |
 | 001 | **Galería editorial** · columnas que se expanden, fichas, cuadrícula, sonido opcional y versión móvil | Demo interactiva conservada | [Prototipo 001](prototipos/001-galeria-editorial/index.html) |
 | 002 | **Galería multitienda** · clips en hover, rutas de cuatro tiendas, selección de prendas y móvil | Demo interactiva verificada | [Prototipo 002](prototipos/002-galeria-multitienda/index.html) |
+| 008 | **Atlas fragmentado** · siete columnas editoriales, campañas en seis fragmentos, escaparates propios y bolsa de prueba | Demo nueva; requiere validación visual de fotos externas | [Prototipo 008](prototipos/008-atlas-fragmentado/index.html) |
 
-Ambos prototipos son **HTML autocontenidos** que pueden descargarse y abrirse en un navegador sin dependencias ni instalación. En el 002 los microvídeos son movimientos simulados a partir de fotografías, no filmaciones reales.
+Los prototipos 001 y 002 son **HTML autocontenidos**. El 008 también se abre directamente en un navegador, pero carga fotografías externas de Unsplash y fuentes remotas. En el 002 los microvídeos son movimientos simulados a partir de fotografías; el 008 utiliza imágenes estáticas, sin fingir vídeo real.
 
 ## Método de trabajo: Modo Diseño
 
@@ -19,7 +20,7 @@ Ambos prototipos son **HTML autocontenidos** que pueden descargarse y abrirse en
 4. Revisión de escritorio, móvil y accesibilidad básica.
 5. Documentación y conservación de cada iteración.
 
-Para un nuevo experimento se crea una carpeta independiente: `prototipos/003-nombre/`, luego `004-...`. No se sobrescriben versiones anteriores.
+Para un nuevo experimento se crea una carpeta independiente bajo `prototipos/NNN-nombre/`. No se sobrescriben versiones anteriores. La numeración 008 conserva la secuencia de las iteraciones de diseño previas, aunque 003–007 aún no estén archivadas aquí.
 
 ## Estado y limitaciones
 
